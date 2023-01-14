@@ -1,15 +1,21 @@
-<h1>編集画面</h1>
+<h1>Editing Book</h1>
 
 <%= form_with model: @book do |f| %>
-  <h4>本のタイトル</h4>
-  <%= f.text_field :title %>
+  <div class="field">
+    <label for="book_title">Title<br>
+    <%= f.text_field :title %>
+    </label>
+  </div>
 
-  <h4>感想</h4>
-  <%= f.text_area :body %>
+  <div class="field">
+    <label for="book_body">Body<br>
+    <%= f.text_area :body %>
+    </label>
+  </div>
 
-  <%= f.submit '保存' %>
+  <br><%= f.submit 'Update Book' %>
 
 <% end %>
 
-<%= link_to "詳細", book_path(@book.id) %>
-<%= link_to "戻る", books_path %>
+<%= link_to "Show", book_path(@book.id) %>
+<%= link_to "Back", books_path %>
